@@ -1,6 +1,8 @@
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 const Home = () => {
     let navigate = useNavigate();
+    const {email} = useParams();
+    console.log(email);
     const handleNavigate = () => {
         fetch("http://localhost:8080/")
         .then(result=> result.json())
@@ -14,6 +16,7 @@ const Home = () => {
     }
     return (
         <div style={{textAlign:"center"}}>
+            <p>User is logged as <b>{email}</b></p>
             <p>This is Home page</p>
             <button onClick={handleNavigate}>Contact</button>
         </div>

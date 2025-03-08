@@ -37,7 +37,7 @@ function App() {
         <PageRouting />
        <Routes>
         <Route element={<PrivateLogin><Outlet/></PrivateLogin>}>
-            <Route path="/" element={
+            <Route path="/home/:email" element={
                 <Home />
             } />
             <Route path="/about" element={
@@ -49,8 +49,6 @@ function App() {
           </Route>
          <Route path="/login" element={<Login />} />
        </Routes>
-      
-        
       </div>
       </BrowserRouter>
       </LoginContext>
