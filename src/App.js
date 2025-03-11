@@ -13,6 +13,7 @@ import Contact from './Contact';
 import Login from './Login';  
 import { LoginContext } from './LoginContext';
 import PrivateLogin from './PrivateLogin';
+import Products from './Products';
 // import Hooks from './Hooks.js';
 // import BatchUpdate from './BatchUpdate';
 // import Counter from './Counter';
@@ -36,7 +37,7 @@ function App() {
         {/* <HooksUseMemo /> */}
         <PageRouting />
        <Routes>
-        <Route element={<PrivateLogin><Outlet/></PrivateLogin>}>
+          <Route element={<PrivateLogin><Outlet/></PrivateLogin>}>
             <Route path="/home/:email" element={
                 <Home />
             } />
@@ -47,6 +48,7 @@ function App() {
                 <Contact />
             } />
           </Route>
+          <Route path="/product" element={ <Products />} />
          <Route path="/login" element={<Login />} />
        </Routes>
       </div>
